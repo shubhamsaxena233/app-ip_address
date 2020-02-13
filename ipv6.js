@@ -1,8 +1,7 @@
 function getIpv4MappedIpv6Address(ipv4) {
-
+    // console.log("firstIpAddress 2 : "+ipv4);
   // Initialize return argument
   let ipv6Address = null;
-
   // Prepare to derive a Hex version of the dotted-quad decimal IPv4 address.
   // Split the IPv4 address into its four parts.
   let ipv4Quads = ipv4.split('.');
@@ -11,6 +10,7 @@ function getIpv4MappedIpv6Address(ipv4) {
 
   // Verify IPv4 had four parts.
   if (numIpv4Segments === 4) {
+    //   console.log("firstIpAddress 3 : "+ipv4);
     let validQuads = true;
     // Iterate over the IPv4 address parts and verify each segment was a number between 0 and 255.
     for(let i=0; i < numIpv4Segments; i++) {
@@ -20,6 +20,7 @@ function getIpv4MappedIpv6Address(ipv4) {
     }
     // Passed IPv4 is valid. Now to derive an IPv4-mapped IPv6 address.
     if (validQuads) {
+        // console.log("firstIpAddress 4 : "+ipv4);
       // Hardcode the prefix. During refactor, we might want to make the prefix a const.
       ipv6Address = "0:0:0:0:0:ffff:";
       // Iterate over the IPv4 parts
@@ -39,6 +40,8 @@ function getIpv4MappedIpv6Address(ipv4) {
       }
     }
   }
+
+//   console.log("firstIpAddress 5 : "+ipv6Address);
   return ipv6Address;
 }
 

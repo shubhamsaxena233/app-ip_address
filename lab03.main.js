@@ -61,8 +61,8 @@ function getFirstIpAddress(test, cidrStr, callback) {
   let ipv6Address = null;
   if(firstIpAddress!=null) ipv6Address=getIpv4MappedIpv6Address(firstIpAddress);
   var obj = {
-    ipv4Address:  firstIpAddress,
-    ipv6Address: ipv6Address
+    ipv4:  firstIpAddress,
+    ipv6: ipv6Address
   };
 
   // Call the passed callback function.
