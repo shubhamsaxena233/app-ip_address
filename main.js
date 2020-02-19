@@ -32,16 +32,16 @@ class IpAddress {
         // For more information, consult the Log Class guide on the Itential
         // Developer Hub https://developer.itential.io/ located
         // under Documentation -> Developer Guides -> Log Class Guide
-         log.info('Starting the IpAddress product.');
+        log.info('Starting the IpAddress product.');
     }
 
     /**
-    * Calculate and return the first host IP address from a CIDR subnet.
-    * @param {string} cidrStr - The IPv4 subnet expressed
-    *                 in CIDR format.
-    * @param {callback} callback - A callback function.
-    * @return {object} (firstIpAddress) - An IPv4 address.
-    */
+   * Calculate and return the first host IP address from a CIDR subnet.
+   * @param {string} cidrStr - The IPv4 subnet expressed
+   *                 in CIDR format.
+   * @param {callback} callback - A callback function.
+   * @return {object} (firstIpAddress) - An IPv4 address.
+   */
     getFirstIpAddress(cidrStr, callback) {
 
         // Initialize return arguments for callback
@@ -68,6 +68,11 @@ class IpAddress {
             [firstIpAddress] = cidr.toArray(options);
             ipv6Address = getIpv4MappedIpv6Address(firstIpAddress);
         }
+        // if(test==null && firstIpAddress==undefined){
+        //     firstIpAddress=cidrStr;
+        // }
+
+        // console.log("firstIpAddress 1 : "+firstIpAddress);
 
 
         var obj = {
