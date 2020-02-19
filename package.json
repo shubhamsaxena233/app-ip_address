@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/shubhamsaxena233/app-ip_address#readme",
   "dependencies": {
-    "ip-cidr": "^2.0.7"
-  }
+    "ip-cidr": "^2.0.7",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {}
 }
