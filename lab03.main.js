@@ -1,3 +1,10 @@
+/*
+  Import the ip-cidr npm package.
+  See https://www.npmjs.com/package/ip-cidr
+  The ip-cidr package exports a class.
+  Assign the class definition to variable IPCIDR.
+*/
+const IPCIDR = require('ip-cidr');
 
 /*
   Import the built-in path module.
@@ -16,21 +23,13 @@ const path = require('path');
  */
 const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
 
-
-/*
-  Import the ip-cidr npm package.
-  See https://www.npmjs.com/package/ip-cidr
-  The ip-cidr package exports a class.
-  Assign the class definition to variable IPCIDR.
-*/
-const IPCIDR = require('ip-cidr');
-
 /**
  * Calculate and return the first host IP address from a CIDR subnet.
  * @param {string} cidrStr - The IPv4 subnet expressed
  *                 in CIDR format.
  * @param {callback} callback - A callback function.
  * @return {string} (firstIpAddress) - An IPv4 address.
+ *@return {string} (dataReturned) - An IPv4 address and IPv6 address
  */
 function getFirstIpAddress(cidrStr, callback) {
 
@@ -69,7 +68,6 @@ ipv6Address = getIpv4MappedIpv6Address(firstIpAddress);
   // data as the second argument to the callback function.
   return callback(dataReturned, callbackError);
 }
-
 
 
 
