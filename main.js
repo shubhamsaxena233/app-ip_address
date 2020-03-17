@@ -72,13 +72,17 @@ class IpAddress {
             ipv6Address = getIpv4MappedIpv6Address(firstIpAddress);
         }
 
-        dataReturned = "{\"ipv4\":" + firstIpAddress + ",\"ipv6\":" + ipv6Address + "}";
+        var obj = {
+            ipv4: firstIpAddress,
+            ipv6: ipv6Address
+        };
+        // dataReturned = "{\"ipv4\":" + firstIpAddress + ",\"ipv6\":" + ipv6Address + "}";
 
         // Call the passed callback function.
         // Node.js convention is to pass error data as the first argument to a callback.
         // The IAP convention is to pass returned data as the first argument and error
         // data as the second argument to the callback function.
-        return callback(dataReturned, callbackError);
+        return callback(obj, callbackError);
     }
 }
 
